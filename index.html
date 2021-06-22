@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{emp.name}}</p>
+      <p v-text="emp.hobby"></p>
+
+      <div v-html="username"></div>
+    </div>
+    <script src="vue.js"></script>
+    <script src="observer.js"></script>
+    <script src="compiler.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> -->
+    <script>
+      let vm = new Vue({
+        el: '#app',
+
+        data: {
+          username: '阿锋',
+
+          msg: 'asdasdsadd',
+          emp: {
+            name: 'af',
+            age: '21',
+            slary: 8000,
+            hobby: 'guitar',
+          },
+        },
+        methods: {
+          handleClick() {
+            console.log(this.emp.name);
+            this.emp.name = '你好啊';
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
